@@ -1,5 +1,5 @@
 module.exports = {
   
-  database: 'mongodb://localhost:27017/survey',    //dev
+  database: 'mongodb://virendra:virendra@ds131782.mlab.com:31782/lms',    //dev
   secret: 'yoursecret'
 }

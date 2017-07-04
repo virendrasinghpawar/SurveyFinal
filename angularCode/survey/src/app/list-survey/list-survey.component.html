@@ -1,0 +1,28 @@
+
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>id</th>
+ 
+      <th>CreatedAt</th>
+      <th>count</th>
+      <th>Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let surv of survey; let i=index ">
+  <p *ngIf=false>{{surv | json}}</p>
+      <td >  
+        <a href="/visit/{{surv._id}}">{{i+1}}normal</a>asdf
+      <a [routerLink]="['/visit/',surv._id]">{{i+1}}</a></td>
+      
+      <td>{{surv?.createdAt | date}}</td>
+      <td>{{surv?.count}}</td>
+      <td>{{surv?.title}}</td>
+    </tr>
+  
+  
+  </tbody>
+</table> 
+
+<!--<div>there si nothing {{survey | json }}</div>-->

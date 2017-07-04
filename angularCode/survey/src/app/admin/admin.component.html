@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+    <div class="col-xs-12">
+      <div class="margin-20">
+        <h4>Add Survey</h4>
+      </div>
+      <form [formGroup]="myForm" novalidate (ngSubmit)="save(myForm)">
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" class="form-control" formControlName="Title">
+          <small *ngIf="!myForm.controls.Title.valid&&myForm.controls.Title.touched" class="text-danger">
+              Title is required (minimum 5 characters).
+            </small>
+        </div>
+        <!--addresses-->
+        <div formArrayName="choices">
+          <div *ngFor="let address of myForm.controls.choices.controls; let i=index" class="panel panel-default">
+            <div class="panel-heading">
+              <span>Choice {{i + 1}}</span>
+              <span class="glyphicon glyphicon-remove pull-right" *ngIf="myForm.controls.choices.controls.length > 1" (click)="removeChoice(i)"></span>
+            </div>
+            <div class="panel-body" [formGroupName]="i">
+              <div class="form-group col-xs-12">
+                <label>choice</label>
+                <input type="text" class="form-control" formControlName="choice">
+                <small *ngIf="!myForm.controls.choices.controls[i].controls.choice.valid && myForm.controls.choices.controls[i].controls.choice.touched" class="text-danger">
+                    choice is required
+                </small>
+              </div>
+             
+            </div>
+          </div>
+        </div>
+
+        <div class="margin-20">
+          <a (click)="addChoice()" style="cursor: default">
+            Add another Choice 
+          </a>
+        </div>
+
+        <div class="margin-20">
+          <button type="reset" class="btn btn-default pull-left" >Reset </button>
+          <button type="submit" class="btn btn-primary pull-right" [disabled]="!myForm.valid">Submit</button>
+        </div>
+        <div class="clearfix"></div>
+
+        
+      </form>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <app-list-survey></app-list-survey>
+  </div>
+</div>
+</div>

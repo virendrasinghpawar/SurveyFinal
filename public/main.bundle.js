@@ -244,7 +244,7 @@ AppModule = __decorate([
                     path: 'visit/:id',
                     component: __WEBPACK_IMPORTED_MODULE_7__visit_survey_visit_survey_component__["a" /* VisitSurveyComponent */]
                 }
-            ])
+            ], { useHash: true })
         ],
         providers: [__WEBPACK_IMPORTED_MODULE_4__survey_service__["a" /* SurveyService */]],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */]]

@@ -337,7 +337,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/list-survey/list-survey.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<table class=\"table table-striped table-hover \">\n  <thead>\n    <tr>\n      <th>id</th>\n \n      <th>CreatedAt</th>\n      <th>count</th>\n      <th>Title</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr *ngFor=\"let surv of survey; let i=index \">\n  <p *ngIf=false>{{surv | json}}</p>\n      <td >  \n        <a href=\"/visit/{{surv._id}}\">{{i+1}}normal</a>asdf\n      <a [routerLink]=\"['/visit/',surv._id]\">{{i+1}}</a></td>\n      \n      <td>{{surv?.createdAt | date}}</td>\n      <td>{{surv?.count}}</td>\n      <td>{{surv?.title}}</td>\n    </tr>\n  \n  \n  </tbody>\n</table> \n\n<!--<div>there si nothing {{survey | json }}</div>-->"
+module.exports = "\n<table class=\"table table-striped table-hover \">\n  <thead>\n    <tr>\n      <th>id</th>\n \n      <th>CreatedAt</th>\n      <th>count</th>\n      <th>Title</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr *ngFor=\"let surv of survey; let i=index \">\n  <p *ngIf=false>{{surv | json}}</p>\n      <td >  \n        <!--<a href=\"/visit/{{surv._id}}\">{{i+1}}normal</a>asdf-->\n      <a [routerLink]=\"['/visit/',surv._id]\">{{i+1}}</a></td>\n      \n      <td>{{surv?.createdAt | date}}</td>\n      <td>{{surv?.count}}</td>\n      <td>{{surv?.title}}</td>\n    </tr>\n  \n  \n  </tbody>\n</table> \n\n<!--<div>there si nothing {{survey | json }}</div>-->"
 
 /***/ }),
 
